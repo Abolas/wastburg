@@ -1,0 +1,27 @@
+<div class="tab traits-list" data-group="primary" data-tab="traits-list">
+  <ol class="items-list">
+    <li class="item flexrow items-header">
+      <div class="item-name">TRAITS</div>
+      <div class="item-type">TYPE</div>
+      <div class="item-controls">EDITER/SUPPRIMER</div>
+    </li>
+    {{#each traits as |item id|}}
+      <li class="item flexrow" data-item-id="{{item._id}}">
+        <div class="item-name-trait">
+          {{item.name}}
+        </div>
+        <div class="item-name-type">
+          {{system.type}}
+        </div>
+        <div class="item-controls">
+          <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+        </div>
+      </li>
+    {{/each}}
+  </ol>
+    <div class="editor-trait">
+      <label class="label-editor-trait">Pourquoi je suis devenu gardoche//je suis entré dans la bande :</label>
+      <textarea class="textareaTrait"name="system.note">{{system.note}}</textarea>
+    </div>
+</div>

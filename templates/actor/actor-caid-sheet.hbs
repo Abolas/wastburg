@@ -1,0 +1,110 @@
+<section class="caid-sheet" draggable="true">
+<form class="{{cssClass}} {{actor.type}} flexcol " autocomplete="off" draggable="true">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header-personnage" >
+        <div class="firstColumnHeader"><h1 class="charname-personnage"><input class="namePlayer" name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>     
+        </div>  
+  
+  <ol class="items-list">
+    <li class="item flexrow items-header">
+      <div class="item-name">TRAITS</div>
+      <div class="item-type">TYPE</div>
+      <div class="item-controls">EDITER/SUPPRIMER</div>
+    </li>
+    {{#each traits as |item id|}}
+      <li class="item flexrow" data-item-id="{{item._id}}">
+        <div class="item-name-trait-caid">
+          {{item.name}}
+        </div>
+        <div class="item-name-trait-caid">
+          {{system.type}}
+        </div>
+        <div class="item-controls">
+          <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+        </div>
+      </li>
+    {{/each}}
+  </ol>
+  </header>
+<div class="question-prevot">
+<label class="question">Honnêtenement,comment il a éliminé la concurrence, le caïd?</label>
+<input class="reponse" type="text" name="system.reponseCaid01" value="{{system.reponseCaid01}}" data-dtype="String" />
+<label class="question">C'est quel genre de chef?</label>
+<input class="reponse" type="text" name="system.reponseCaid02" value="{{system.reponseCaid02}}" data-dtype="String" />
+<label class="question">Et avec les gros bonnets, il en est où?</label>
+<input class="reponse" type="text" name="system.reponseCaid03" value="{{system.reponseCaid03}}" data-dtype="String" />
+</div>
+
+<div class="tables-prevot-appreciation">
+    <table class="prevot-appreciation">
+<thead>
+  <tr>
+    <th class="titre-appreciation">Score</th>
+    <th class="titre-appreciation">Confiance</th>
+    <th class="titre-appreciation">Popularité</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="prevot-appreciation">(++)</td>
+    <td class="prevot-appreciation">"Efficaces.A surveiller"</td>
+    <td class="prevot-appreciation">"Ils iront loin"(++)</td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation">(+)</td>
+    <td class="prevot-appreciation">"Des durs"</td>
+    <td class="prevot-appreciation">"Un exemple à suivre"(+)</td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation">(0)</td>
+    <td class="prevot-appreciation">"Le ventre mou"</td>
+    <td class="prevot-appreciation"></td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation">(-)</td>
+    <td class="prevot-appreciation">"Pas doués"</td>
+    <td class="prevot-appreciation">"Vaut mieux pas traîner avec eux"(-)</td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation">(--)</td>
+    <td class="prevot-appreciation">"Sacrifiables et inutiles."</td>
+    <td class="prevot-appreciation">"Des minables."(--)</td>
+  </tr>
+</tbody>
+</table>
+
+    <table class="prevot-renfort">
+<thead>
+  <tr>
+    <th class="titre-renfort">D6</th>
+    <th class="titre-renfort">Réponse</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="prevot-appreciation"><i class="fa-regular fa-dice-one"></i></td>
+    <td class="prevot-appreciation">1 Trait(-)et 1 dette(--)</td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation"><i class="fa-regular fa-dice-two"></i></td>
+    <td class="prevot-appreciation">1 Trait(0) et 1 dette envers le caïd(--)</td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation"><i class="fa-regular fa-dice-three"></i><i class="fa-regular fa-dice-four"></i></td>
+    <td class="prevot-appreciation">1 Trait(-) et 1 Trait(+) et 1 dette(-)</td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation"><i class="fa-regular fa-dice-five"></i></td>
+    <td class="prevot-appreciation">1 Trait(+) et 1 dette(-)</td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation"><i class="fa-regular fa-dice-six"></i></td>
+    <td class="prevot-appreciation">1 Trait(++) et pas de dette</td>
+  </tr>
+</tbody>
+</table>
+</div>
+</form>
+</section>

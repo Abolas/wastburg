@@ -1,0 +1,49 @@
+<div class="tab etats-list" data-group="primary" data-tab="etats-list">
+      <table class="tableEtats">
+      <thead>
+      <tr>
+        <th>ETATS</th>
+        <th>DESCRIPTION</th>
+        <th>BONUS/MALUS</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>SANTE</td>
+        <td><input type="text" name="system.sante.santeText" value="{{system.sante.santeText}}" data-dtype="String" />  </td>
+        <td> <select class="selectSante" name="system.sante.value" data-dtype="String">
+            {{#select system.sante.value}}
+            {{#each system.sante as |sante key|}}
+            <option  value="{{key}}">{{sante.label}}</option>
+            {{/each}}
+            {{/select}}
+            </select>
+        </td>
+      </tr>
+      <tr>
+        <td>MENTAL</td>
+        <td><input type="text" name="system.mental.mentalText" value="{{system.mental.mentalText}}" data-dtype="String" /></td>
+        <td><select class="selectMental" name="system.mental.value" data-dtype="String">
+            {{#select system.mental.value}}
+            {{#each system.mental as |mental key|}}
+            <option  value="{{key}}">{{mental.label}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
+        </td>
+        </tr>
+      <tr>
+        <td>SOCIAL</td>
+        <td><input type="text" name="system.social.socialText" value="{{system.social.socialText}}" data-dtype="String" /></td>
+        <td><select class="selectSocial" name="system.social.value" data-dtype="String">
+            {{#select system.social.value}}
+            {{#each system.social as |social key|}}
+            <option  value="{{key}}">{{social.label}}</option>
+            {{/each}}
+            {{/select}}
+          </select>     
+          </td>
+      </tr>
+      <tbody>
+    </table>
+</div>

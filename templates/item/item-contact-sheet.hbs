@@ -1,0 +1,41 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <body>
+      <header class="sheet-header-contact">
+        <img class="profile-img-contact" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <div class="header-fields">
+            <h1 class="charname">
+                <input class="inputNameContact" name="name" type="text" value="{{data.name}}" placeholder="Name" />
+            </h1>
+        </div>
+    </header>
+<table class="tableContact">
+  <thead>
+    <tr>
+      <th><label class="contact">Niveau</label></th>
+      <th><label class="contact-quartier">Quartier</label></th>
+      <th><label class="traitsPremier">Trait premier</label></th>
+      <th><label class="traitsSecond">Trait Second</label></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><select class="selectContact" name="system.niveau.value" data-dtype="String">
+                            {{#select system.niveau.value}}
+                            {{#each system.niveau as |niveau key|}}
+                            <option  value="{{key}}">{{niveau.label}}</option>
+                            {{/each}}
+                            {{/select}}
+                          </select>  
+                          </td>
+      <td><input type="text" name="system.quartier" value="{{system.quartier}}" data-dtype="String" /></td>
+      <td><input type="text" name="system.traitsPremier" value="{{system.traitsPremier}}" data-dtype="String" /></td>
+      <td><input type="text" name="system.traitsSecond" value="{{system.traitsSecond}}" data-dtype="String" /></td>
+    </tr>
+  </tbody>
+</table>
+  <div class="editor-contact">
+    <label class="description-contact">Description du contact:</label>
+      {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+    </div>
+  </body>
+</form>

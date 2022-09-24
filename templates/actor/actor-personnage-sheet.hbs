@@ -1,0 +1,71 @@
+<form class="{{cssClass}} {{actor.type}} flexcol " autocomplete="off" draggable="true">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header-personnage">
+        <div class="firstColumnHeader"><h1 class="charname-personnage"><input class="namePlayer" name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>     
+         <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+              <div class="infoFirstColumnHeader">                                      
+                <table class="infoAubaineReput">
+                      <tbody>
+                      <tr>
+                        <td><label class="aubaine">Aubaine:</label></td>
+                        <td><input class="input-aubaine" type="text" name="system.aubaine.value" value="{{system.aubaine.value}}" data-dtype="Number" />   </td>
+                      </tr>
+                      <tr>
+                        <td><label class="aubaine">Aubaine de groupe:</label></td>
+                        <td> <input class="input-aubaine"type="text" name="system.aubaineGroupe.value" value="{{system.aubaineGroupe.value}}" data-dtype="Number" /></td>
+                      </tr>
+                      <tr>
+                        <td><label class="reputation">Reputation:</label></td>
+                        <td>  <select class="selectreputation" name="system.reputation.value" data-dtype="String">
+                        {{#select system.reputation.value}}
+                        {{#each system.reputation as |reputation key|}}
+                        <option  value="{{key}}">{{reputation.label}}</option>
+                        {{/each}}
+                        {{/select}}
+                        </select>
+                        </td>
+                      </tr>
+                      <tbody>
+                  </table>
+                </div>
+        </div>
+       
+        <div class="difficulte-rollInput">
+        <label class="label-difficulte-rollInput">MODIFICATEUR</label><br>
+        <select  id="selectRollInput"class="selectRollInput" name="selectRollInput">
+        <option value="1">(--)</option>
+        <option value="2">(-)</option>
+        <option value="3">(0)</option>
+        <option value="4">(+)</option>
+        <option value="5">(++)</option>
+        </select>
+         <br>
+        <button class="onRollButton" type="button">TEST</button>
+        </div>
+        
+      
+  </header>
+   {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="etats-list">ETATS</a>
+        <a class="item" data-tab="traits-list">TRAITS</a>
+        <a class="item" data-tab="contact-list">CONTACTS</a>
+        <a class="item" data-tab="actor-inventaire">INVENTAIRE</a>
+        </nav>
+      <section class="section-etats">
+          {{> "systems/wastburg/templates/actor/parts/actor-etats.hbs"}}
+      </section>     
+      <section class="section-traits">
+          {{~> "systems/wastburg/templates/actor/parts/actor-traits.hbs"}}
+      </section>
+      <section class="section-contact">
+           {{> "systems/wastburg/templates/actor/parts/actor-contact.hbs"}}
+      </section>
+      <section class="section-inventaire">
+           {{~> "systems/wastburg/templates/actor/parts/actor-inventaire.hbs"}}
+      </section> 
+    </section> 
+</form>
+

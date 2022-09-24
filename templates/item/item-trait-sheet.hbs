@@ -1,0 +1,20 @@
+<form class="{{cssClass}}" autocomplete="off"> 
+  <body>
+       <header class="sheet-header-trait">
+        <img class="profile-img-trait" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <div class="header-fields">
+            <h1 class="charname">
+                <input class="inputNameTrait" name="name" type="text" value="{{data.name}}" placeholder="Name" />
+            </h1>
+        </div>
+    </header>
+    <div class="label-type">
+      <label class="type">Type</label>
+      <input class="input-trait" type="text" name="system.type" value="{{system.type}}" data-dtype="String" />
+    </div>
+    <div class="editor-trait">
+     <label class="description-contact">Description du trait:</label>
+    {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+    </div>
+  </body>
+</form>

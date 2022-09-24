@@ -1,0 +1,181 @@
+{
+  "Actor": {
+    "types": ["personnage","prevot","caid"],
+    "templates": {
+      "base": {
+        "biography": "",
+        "note":"",
+        "arme":"",
+        "protection":"",
+        "materiel":"",
+        "fortune":"",
+        "dettes":"",
+        "anciennete":""
+      }
+    },
+    "personnage": {
+      "templates": ["base"],
+      "role":{
+        "gardoche":{
+          "label" : "Gardoche",
+          "checkGardoche" : false
+        },
+        "malfrat":{
+          "label" : "Malfrat",
+          "checkMalfrat" : false
+        }
+      },
+      "aubaine" :{
+        "value" : "0"
+      },
+      "aubaineGroupe" :{
+        "value" : "0"
+      },
+      "reputation" :{
+        "minusMinus" :{
+          "label" : "--",
+          "dtype": "String"          
+        },
+        "minus" :{
+          "label" : "-",
+          "dtype": "String"
+        },
+        "zero":{
+          "label":"0",
+          "dtype": "String"
+        },
+        "plus":{
+          "label":"+",
+          "dtype": "String"          
+        },
+        "plusPlus":{
+          "label":"++",
+          "dtype": "String"        
+        }
+      },
+        "sante" :{
+          "santeText":"",
+          "minusminusSante":{
+              "label" : "--",
+              "dtype" : "String"
+            },
+            "minusSante":{
+              "label" : "-",
+              "dtype" : "String"
+            },
+            "zeroSante":{
+              "label" : "0",
+              "dtype" : "String"
+            },
+            "plusSante":{
+              "label" :"+",
+              "dtype": "String"
+            },
+            "plusplusSante":{
+              "label" : "++",
+              "dtype": "String"
+            }
+          },
+          
+        
+        "mental" :{
+          "mentalText":"",
+            "minusminusMental":{
+              "label" : "--",
+              "dtype" : "String"
+            },
+            "minusMental":{
+              "label" : "-",
+              "dtype" : "String"
+            },
+            "zeroMental":{
+              "label" : "0",
+              "dtype" : "String"
+            },
+            "plusMental":{
+              "label" :"+",
+              "dtype": "String"
+            },
+            "plusplusMental":{
+              "label" : "++",
+              "dtype": "String"
+            }
+          },         
+    
+        "social" :{
+          "socialText":"",
+            "minusminusSocial":{
+              "label" : "--",
+              "dtype" : "String"
+            },
+            "minusSocial":{
+              "label" : "-",
+              "dtype" : "String"
+            },
+            "zeroSocial":{
+              "label" : "0",
+              "dtype" : "String"
+            },
+            "plusSocial":{
+              "label" :"+",
+              "dtype": "String"
+            },
+            "plusplusSocial":{
+              "label" : "++",
+              "dtype": "String"
+            }
+          }          
+        },
+    "prevot" :{
+        "templates": ["base"],
+        "reponsePrevot01":"",
+        "reponsePrevot02":"",
+        "reponsePrevot03":""       
+    },
+    "caid" :{
+      "templates": ["base"],
+      "reponseCaid01":"",
+      "reponseCaid02":"",
+      "reponseCaid03":""
+    }
+  },
+
+  "Item": {
+    "types": ["trait","contact"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "trait": {
+      "templates" : ["base"],
+      "type":"",
+      "key":"",
+      "historique": {
+        "value": ""
+      }
+      },
+    "contact": {
+      "contactName":"",
+      "niveau": {
+        "--": {
+          "label":"--",
+          "dtype": "String"},
+        "-": {
+          "label":"-",
+          "dtype": "String"},
+        "0": {
+          "label":"0",
+          "dtype": "String"},
+        "+": {
+          "label":"+",
+          "dtype": "String"},
+        "++": {
+          "label":"++",
+          "dtype": "String"}
+         }
+     }                    
+    }
+  }
+  
+

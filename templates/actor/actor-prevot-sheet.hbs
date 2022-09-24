@@ -1,0 +1,110 @@
+<section class="prevot-sheet" draggable="true">
+<form class="{{cssClass}} {{actor.type}} flexcol " autocomplete="off" draggable="true">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header-personnage" >
+        <div class="firstColumnHeader"><h1 class="charname-personnage"><input class="namePlayer" name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>     
+        </div>  
+  
+  <ol class="items-list">
+    <li class="item flexrow items-header">
+      <div class="item-name">TRAITS</div>
+      <div class="item-type">TYPE</div>
+      <div class="item-controls">EDITER/SUPPRIMER</div>
+    </li>
+    {{#each traits as |item id|}}
+      <li class="item flexrow" data-item-id="{{item._id}}">
+        <div class="item-name-trait-prevot">
+          {{item.name}}
+        </div>
+        <div class="item-name-trait-prevot">
+          {{system.type}}
+        </div>
+        <div class="item-controls">
+          <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+        </div>
+      </li>
+    {{/each}}
+  </ol>
+  </header>
+<div class="question-prevot">
+<label class="question">Honnêtenement,comment il l'a eu, son poste le prévôt?</label>
+<input class="reponse" type="text" name="system.reponsePrevot01" value="{{system.reponsePrevot01}}" data-dtype="String" />
+<label class="question">C'est quel genre de chef?</label>
+<input class="reponse" type="text" name="system.reponsePrevot02" value="{{system.reponsePrevot02}}" data-dtype="String" />
+<label class="question">Et comme gardoche, il a laissé quel souvenir?</label>
+<input class="reponse" type="text" name="system.reponsePrevot03" value="{{system.reponsePrevot03}}" data-dtype="String" />
+</div>
+
+<div class="tables-prevot-appreciation">
+    <table class="prevot-appreciation">
+<thead>
+  <tr>
+    <th class="titre-appreciation">Score</th>
+    <th class="titre-appreciation">Appréciation</th>
+    <th class="titre-appreciation">Popularité</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="prevot-appreciation">(++)</td>
+    <td class="prevot-appreciation">"Mes meilleurs éléments"</td>
+    <td class="prevot-appreciation">Les chouchous du prêvot(-)</td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation">(+)</td>
+    <td class="prevot-appreciation">"Des bons"</td>
+    <td class="prevot-appreciation"></td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation">(0)</td>
+    <td class="prevot-appreciation">"Le ventre mou"</td>
+    <td class="prevot-appreciation"></td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation">(-)</td>
+    <td class="prevot-appreciation">"Je les ai à l'oeil"</td>
+    <td class="prevot-appreciation"></td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation">(--)</td>
+    <td class="prevot-appreciation">"Des grosses tanches"</td>
+    <td class="prevot-appreciation">"Il exagère un peu avec eux, le prévôt"(+)</td>
+  </tr>
+</tbody>
+</table>
+
+    <table class="prevot-renfort">
+<thead>
+  <tr>
+    <th class="titre-renfort">D6</th>
+    <th class="titre-renfort">Réponse</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="prevot-appreciation"><i class="fa-regular fa-dice-one"></i></td>
+    <td class="prevot-appreciation">1 Trait de caserne (--)</td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation"><i class="fa-regular fa-dice-two"></i></td>
+    <td class="prevot-appreciation">1 Trait de caserne (-)</td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation"><i class="fa-regular fa-dice-three"></i><i class="fa-regular fa-dice-four"></i></td>
+    <td class="prevot-appreciation">1 Trait de caserne (-) et 1 Trait de caserne (+)</td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation"><i class="fa-regular fa-dice-five"></i></td>
+    <td class="prevot-appreciation">1 Trait de caserne (+)</td>
+  </tr>
+  <tr>
+    <td class="prevot-appreciation"><i class="fa-regular fa-dice-six"></i></td>
+    <td class="prevot-appreciation">1 Trait de caserne (++)</td>
+  </tr>
+</tbody>
+</table>
+</div>
+</form>
+</section>

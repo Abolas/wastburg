@@ -1,0 +1,29 @@
+<div class="tab contact-list" data-group="primary" data-tab="contact-list">
+<ol class="items-list">
+  <li class="item flexrow items-header">
+    <div class="item-contact">Nom</div>
+    <div class="item-contact">Niveau</div>
+    <div class="item-contact">Quartier</div>
+    <div class="item-contact">Trait premier</div>
+    <div class="item-contact">Trait second</div>
+    <div class="item-contact">Edit</div>
+  </li>
+  {{#each contacts as |item id|}}
+    <li class="item flexrow" data-item-id="{{item._id}}">
+      <div class="item-contact-tabs">
+        {{item.name}}
+      </div>
+      <div class="item-contact-tabs">
+        {{system.niveau.value}}
+      </div>
+      <div class="item-contact-tabs">{{system.quartier}}</div>
+      <div class="item-contact-tabs">{{system.traitsPremier}}</div>
+      <div class="item-contact-tabs">{{system.traitsSecond}}</div>
+      <div class="item-controls">
+        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+      </div>
+    </li>
+  {{/each}}
+</ol>
+</div>
